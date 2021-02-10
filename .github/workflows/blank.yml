@@ -13,6 +13,6 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BUILD_DIR: test/build/ # The folder, the action should deploy.
-        BUILD_SCRIPT: npm install && npm run docs:dev # The build script the action should run prior to deploying.
+        BUILD_SCRIPT: npm install && npm build # The build script the action should run prior to deploying.
 
 
