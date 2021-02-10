@@ -12,7 +12,8 @@ jobs:
       uses: testthedocs/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_DIR: test/build/ # The folder, the action should deploy.
-        BUILD_SCRIPT: npm install && npm build # The build script the action should run prior to deploying..
+    - run: npm install
+    - run: npm build
+      
 
 
