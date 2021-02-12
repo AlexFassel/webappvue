@@ -4,7 +4,7 @@ module.exports = {
     description: 'Just playing around',
     themeConfig: {
         nav: [
-            { text: 'Home', link: '/' },
+            { text: 'Home', link: '/devops/test.md' },
             { text: 'Guide', link: '/guide/' },
             { text: 'External', link: 'https://google.com' }
           ],
