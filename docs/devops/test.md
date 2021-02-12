@@ -1,5 +1,5 @@
  # Azure Security Guide
-![Azure Security Guide](../images/00-azure-security-guide.png)
+
 
 ## Table of contents
   * [BYOK – Bring Your Own Key](#byok--bring-your-own-key)
@@ -18,7 +18,7 @@ Be aware that BYOK only protects data when it gets stored and not while the data
 
 The following picture sketches the main components when using BYOK:
 
-![BYOK Overview](../images/18-byok-overview.png)
+
 
 The main components to implement BYOK are 2 High Security Modules (HSM) in the On-Premises data center and in the Cloud Provider data center. These are represented as the grey boxes on the picture. A HSM is a special hardware which is capable of creating keys in a bullet proof way not allowing to extract keys for unauthorized use or create duplicates of keys. Such hardware is built only for that purpose using proven technology designed for that. This is also testified by appropriate certifications.
 You can compare this to using special keys for safe locks in contrast to using standard keys and locks for your garage at home. Creating keys for safe locks also requires more sophisticated tools and experience compared to creating standard keys for non-high secure environments.
@@ -29,7 +29,7 @@ An introduction to BYOK can be found at [LINK] and [LINK].
 The standard concept for using BYOK is to have multiple keys on multiple layers to implement encryption at rest. The key on the higher level then always protects the key on the next lower level.
 The following picture shows, how this is typically layered:
 
-![BYOK Layering Overview](../images/19-byok-layering-overview.png)
+
 
 As the key on the higher level protects key(s) on the lower layered level means, that removing a key in higher level makes a key in a lower level useless. If a key on a higher gets removed, decryption of data is not possible anymore.
 Depending on the service implementing BYOK, multiple keys are created on the lower level. Azure Storage and Azure Data Lake Store e.g. create BEKs for every 4 MB of data. This means that “only” 4 MB of data get lost if one of the BEKs gets compromised. Deleting the Wrapping Key e.g. means making all BEKs unusable.
