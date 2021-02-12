@@ -16,5 +16,5 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
 
-'# Hello VuePress'
+# Hello VuePress
 :tada: :100:
